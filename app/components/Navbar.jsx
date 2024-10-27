@@ -1,35 +1,41 @@
 import { Link } from "@remix-run/react";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
+
+  const {loginWithRedirect} = useAuth0();
+
   return (
     <div className="navbar bg-white fixed top-0 left-0 z-50">
       <div className="navbar-start">
         <div className="dropdown">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost lg:hidden"
-          ></div>
+          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            {/* REPLACE WITH ICON */}
+            {">"}
+          </div>
           <ul
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a>abc</a>
+              <a>Material de estudio UCE</a>
             </li>
             <li>
-              <a>Parent</a>
+              <a>Cursos</a>
               <ul className="p-2">
                 <li>
-                  <a>Submenu 1</a>
+                  <a>Numérico</a>
                 </li>
                 <li>
-                  <a>Submenu 2</a>
+                  <a>Verbal</a>
+                </li>
+                <li>
+                  <a>Abstracto</a>
                 </li>
               </ul>
             </li>
             <li>
-              <a>Item 3</a>
+              <a>Simulador UCE</a>
             </li>
           </ul>
         </div>
@@ -65,30 +71,37 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end">
-        <a className="btn">Contáctanos</a>
+        <a className="btn btn-outline btn-primary btn-sm mr-4">Contáctanos</a>
 
         <div className="dropdown dropdown-end">
-      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-        <div className="w-10 rounded-full">
-          <img
-            alt="Tailwind CSS Navbar component"
-            src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost btn-circle avatar"
+          >
+            <div className="w-10 rounded-full">
+              <img
+                alt="Tailwind CSS Navbar component"
+                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+              />
+            </div>
+          </div>
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+          >
+            <li>
+              <button onClick={()=>loginWithRedirect()} className="">Ingresar</button>
+            </li>
+            <li>
+              <a>Settings</a>
+            </li>
+            <li>
+              <a>Logout</a>
+            </li>
+          </ul>
         </div>
       </div>
-      <ul
-        tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-        <li>
-          <a className="justify-between">
-            Profile
-          </a>
-        </li>
-        <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
-      </ul>
-    </div>
-      </div>
-
     </div>
   );
 };

@@ -35,7 +35,7 @@ const Packages = () => {
     },
   ];
   return (
-    <div className="grid grid-cols-3 w-screen gap-16 px-10 pb-36">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-screen md:gap-16 gap-4 px-10 md:pb-36 pb-10">
       {packages.map((pack, index) => (
         <Package
           key={index}

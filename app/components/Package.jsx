@@ -1,6 +1,6 @@
 const Package = ({ title, price, unique, perks }) => {
   return (
-    <div className=" p-12 card border-solid text-center border border-gray-300">
+    <div className=" md:p-12 py-6 card border-solid text-center border border-gray-300">
       <h2 className="text-3xl text-primary font-semibold tracking-wide uppercase">{title}</h2>
       <div className="card-body border-solid">
         <div className="text-4xl text-gray-400">{price}</div>
