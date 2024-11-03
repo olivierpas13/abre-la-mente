@@ -36,7 +36,7 @@ const Navbar = () => {
               </ul>
             </li>
             <li>
-              <a>Simulador UCE</a>
+              <Link to={"/simulador-examen"}>Simulador UCE</Link>to={"/simulador-examen"}
             </li>
           </ul>
         </div>
@@ -66,7 +66,7 @@ const Navbar = () => {
             </details>
           </li>
           <li>
-            <a>Simulador UCE</a>
+          <Link className="button" to={"/simulador-examen"}>Simulador UCE</Link>
           </li>
         </ul>
       </div>
