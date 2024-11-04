@@ -106,7 +106,12 @@ const Navbar = () => {
             </li>
             <li>
               {
-                isAuthenticated? <button onClick={()=>logout()}>Cerrar sesión</button> : null
+                isAuthenticated? <button onClick={()=>logout({
+                  logoutParams: 
+                  {
+                    returnTo: window.location.origin
+                  }
+                })}>Cerrar sesión</button> : null
               }
             </li>
           </ul>
